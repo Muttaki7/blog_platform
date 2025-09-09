@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%= post.title %></title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<h1><%= post.title %></h1>
+<p><small><%= post.createdAt.toDateString() %></small></p>
+<div><%- post.renderedBody %></div>
+<a href="/posts/<%= post._id %>/edit">Edit</a>
+<form action="/posts/<%= post._id %>?_method=DELETE" method="POST" style="display:inline;">
+    <button type="submit">Delete</button>
+</form>
+<br><br>
+<a href="/posts">Back to All Posts</a>
+</body>
+</html>
